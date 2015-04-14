@@ -1,0 +1,9 @@
+#!/bin/bash -eux
+
+for tFile in /cyanite/*.template
+  do
+  /usr/local/bin/templater.lua < $tFile | tee /cyanite/$(basename $tFile .template)
+  done
+
+exec /usr/bin/java -cp /cyanite/cyanite-*-standalone.jar io.cyanite --path /cyanite/cyanite.yaml
+

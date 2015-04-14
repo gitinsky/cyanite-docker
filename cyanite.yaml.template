@@ -1,0 +1,21 @@
+﻿carbon:
+  host: "0.0.0.0"
+  port: 2003
+  rollups:
+    - period: 60480
+      rollup: 10
+    - period: 105120
+      rollup: 600
+http:
+  host: "0.0.0.0"
+  port: 2080
+logging:
+  level: info
+  console: true
+  files:
+    - "/storage/logs/cyanite.log"
+store:
+  cluster: '<%=os.getenv("CLUSTER_ADDRS")%>'
+  keyspace: 'metric'
+  chan_size: 10000 # defaults to 10000
+  batch_size: 500 # defaults to 500
