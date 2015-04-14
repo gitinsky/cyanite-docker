@@ -10,7 +10,7 @@ http:
   host: "0.0.0.0"
   port: 2080
 logging:
-  level: info
+  level: <%=(os.getenv("LOG_LEVEL") or "info")%>
   console: true
   files:
     - "/storage/logs/cyanite.log"
