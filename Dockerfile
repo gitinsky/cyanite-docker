@@ -15,6 +15,7 @@ RUN \
   && mkdir -vp /cyanite \
   && cp -v cyanite-*-standalone.jar /cyanite/ \
   && apt-get -y purge leiningen \
+  && apt-get -y autoremove \
   && rm -rf /var/lib/apt/lists/*
 
 ADD cyanite.yaml.template /cyanite/cyanite.yaml.template
